@@ -54,6 +54,3 @@ def get_bookmarks():
     with open('data/bookmarks.json', encoding='utf-8') as file:
         all_bookm = json.load(file)
     return all_bookm
-
-
-print(get_posts_all())
