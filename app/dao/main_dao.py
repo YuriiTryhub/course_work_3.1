@@ -35,22 +35,3 @@ def get_post_by_pk(pk):
         if pk == post['pk']:
             result.append(post)
     return result
-
-
-def save_to_bookmarks(new_json: list):
-    """
-    Сохраняет в файл обновленный лист со словарями закладок.
-    :param new_json:
-    :return:
-    """
-    with open('data/bookmarks.json', 'w', encoding='utf-8') as file:
-        json.dump(new_json, file, ensure_ascii=False)
-
-
-def get_bookmarks():
-    """
-    :return: Список закладок
-    """
-    with open('data/bookmarks.json', encoding='utf-8') as file:
-        all_bookm = json.load(file)
-    return all_bookm
