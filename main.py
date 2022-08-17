@@ -4,6 +4,7 @@ from app.main.views import main_blueprint
 from app.post.views import post_blueprint
 from app.search.viewes import search_blueprint
 from app.user_feed.viewes import user_feed_blueprint
+from app_api.views import app_api
 
 from app.dao.main_dao import get_posts_all, get_post_by_pk
 
@@ -16,17 +17,7 @@ app.register_blueprint(main_blueprint)
 app.register_blueprint(post_blueprint)
 app.register_blueprint(search_blueprint)
 app.register_blueprint(user_feed_blueprint)
-
-
-@app.route('/api/posts')
-def get_posts():
-    posts = get_posts_all()
-    return jsonify(posts)
-
-
-@app.route('/api/posts/<int:post_id>')
-def get_post_id(post_id):
-    return get_post_by_pk(post_id)
+app.register_blueprint(app_api, url_prefix='/api')
 
 
 if __name__ == '__main__':

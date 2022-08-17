@@ -30,11 +30,5 @@ def search_for_posts(query):
     return result
 
 def get_post_by_pk(pk) -> dict:
-    """all_posts = get_posts_all()
-    for post in all_posts:
-        if post['pk'] == int(pk):
-            return post
-    return False
-    """
     all_posts = get_posts_all()
     return all_posts[int(pk) - 1]
