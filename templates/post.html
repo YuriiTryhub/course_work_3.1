@@ -27,23 +27,26 @@
   <main class="container">
     <section class="items">
       <div class="items__item item item--post">
+
         <div class="item__top">
           <a href="/user-feed/{{post_by_id.poster_name}}" class="item__head">
             <div class="item__ava-wrap">
-              <span class="item__username">{{post_by_id.poster_name}}</span>
               <img src="{{post_by_id.poster_avatar}}" alt="" class="item__ava" width="47">
             </div>
-            <span class="item__username">{{post_by_id.content}}</span>
+            <span class="item__username">{{post_by_id.poster_name}}</span>
           </a>
           <button type="button" class="item__bookmark-btn">
             <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
           </button>
         </div>
+
         <a href="" class="item__post-link">
           <img src="{{post_by_id.pic}}" alt="" width="348" class="item__post-img">
         </a>
         <div class="item__descr">
+          <p class="item__descr">{{post_by_id.content}}</p>
         </div>
+
         <div class="item__bottom">
           <div class="item__post-info">
             <p class="item__comments-counter">{{comments|length}} комментария</p>
@@ -60,6 +63,7 @@
           </div>
          {% endfor %}
         </div>
+        
       </div>
     </section>
   </main>
