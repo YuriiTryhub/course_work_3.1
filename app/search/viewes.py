@@ -6,7 +6,7 @@ from app.dao.main_dao import search_for_posts
 search_blueprint = Blueprint('search_blueprint', __name__)
 
 
-@search_blueprint.route('/search')
+@search_blueprint.route('/search/')
 def search_page():
     qwery = request.args.get("s").lower()
     posts = search_for_posts(qwery)
